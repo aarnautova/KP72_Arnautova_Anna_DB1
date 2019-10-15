@@ -13,6 +13,7 @@
 
 CREATE TABLE public."Guests"
 (
+
     id integer NOT NULL DEFAULT nextval('"Guests_id_seq"'::regclass),
     "Name" text COLLATE pg_catalog."default" NOT NULL,
     "Surname" text COLLATE pg_catalog."default" NOT NULL,
@@ -22,22 +23,26 @@ CREATE TABLE public."Guests"
         REFERENCES public."GuestStatus" (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
+        
 )
 
 2. Статус (GuestStatus)
 
 CREATE TABLE public."GuestStatus"
 (
+
     id integer NOT NULL DEFAULT nextval('"GuestStatus_id_seq"'::regclass),
     "StatusName" text COLLATE pg_catalog."default" NOT NULL,
     "RequiredVisits" smallint NOT NULL,
     CONSTRAINT "GuestStatus_pkey" PRIMARY KEY (id)
+    
 )
 
 3. Кімната (Room)
 
 CREATE TABLE public."Rooms"
 (
+
     id integer NOT NULL DEFAULT nextval('"Rooms_id_seq"'::regclass),
     "TypeId" integer NOT NULL DEFAULT nextval('"Rooms_TypeId_seq"'::regclass),
     "Number" text COLLATE pg_catalog."default" NOT NULL,
@@ -46,17 +51,20 @@ CREATE TABLE public."Rooms"
         REFERENCES public."RoomType" (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
+        
 )
 
 4. Тип кімнати (RoomType)
 
 CREATE TABLE public."RoomType"
 (
+
     id integer NOT NULL DEFAULT nextval('"RoomType_id_seq"'::regclass),
     "TypeName" text COLLATE pg_catalog."default" NOT NULL,
     "BedCount" smallint NOT NULL,
     "Price" money,
     CONSTRAINT "RoomType_pkey" PRIMARY KEY (id)
+    
 )
 
 5. Бронь (Booking)
@@ -79,4 +87,5 @@ CREATE TABLE public."Booking"
         REFERENCES public."Rooms" (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
+        
 )
