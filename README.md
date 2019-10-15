@@ -10,6 +10,7 @@
 Сутності:
 
 1. Гість (Guest)
+
 CREATE TABLE public."Guests"
 (
     id integer NOT NULL DEFAULT nextval('"Guests_id_seq"'::regclass),
@@ -24,6 +25,7 @@ CREATE TABLE public."Guests"
 )
 
 2. Статус (GuestStatus)
+
 CREATE TABLE public."GuestStatus"
 (
     id integer NOT NULL DEFAULT nextval('"GuestStatus_id_seq"'::regclass),
@@ -33,6 +35,7 @@ CREATE TABLE public."GuestStatus"
 )
 
 3. Кімната (Room)
+
 CREATE TABLE public."Rooms"
 (
     id integer NOT NULL DEFAULT nextval('"Rooms_id_seq"'::regclass),
@@ -46,6 +49,7 @@ CREATE TABLE public."Rooms"
 )
 
 4. Тип кімнати (RoomType)
+
 CREATE TABLE public."RoomType"
 (
     id integer NOT NULL DEFAULT nextval('"RoomType_id_seq"'::regclass),
@@ -56,8 +60,10 @@ CREATE TABLE public."RoomType"
 )
 
 5. Бронь (Booking)
-REATE TABLE public."Booking"
+
+CREATE TABLE public."Booking"
 (
+
     id integer NOT NULL DEFAULT nextval('"Booking_id_seq"'::regclass),
     "GuestId" integer NOT NULL DEFAULT nextval('"Booking_GuestId_seq"'::regclass),
     "RoomId" integer NOT NULL DEFAULT nextval('"Booking_RoomId_seq"'::regclass),
