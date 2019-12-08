@@ -1,4 +1,7 @@
 # KP72_Arnautova_Anna_DB1
+[Lab 2](https://github.com/aarnautova/KP72_Arnautova_Anna_DB2)
+[Lab 3](https://github.com/aarnautova/KP72_Arnautova_Anna_DB3)
+
 Лабораторна робота № 1.
 
 Ознайомлення з базовими операціями СУБД PostgreSQL
